@@ -1,5 +1,7 @@
 # OCM URL Verify Bot
-Checks the url included in a discord message. Displays a verified status when the domain of the url attached is in the [verified-domains.txt](verified-domains.txt) 
+Checks the url included in a discord message. Displays a verified status when the domain of the url attached is in the [verified-domains.txt](verified-domains.txt).
+
+Only `https` is accepted.
 
 ## Permissions
 Requires the following permissions to work on Discord

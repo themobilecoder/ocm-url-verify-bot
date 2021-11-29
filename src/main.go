@@ -74,7 +74,10 @@ func handleMessage(s *discordgo.Session, m *discordgo.MessageCreate) {
 		return
 	}
 
-	rxStrict := xurls.Strict()
+	rxStrict, err := xurls.StrictMatchingScheme("https")
+	if err != nil {
+		return
+	}
 	murls := rxStrict.FindAllString(m.Content, -1)
 	if len(murls) != 0 {
 		//Just verify the first valid url posted
