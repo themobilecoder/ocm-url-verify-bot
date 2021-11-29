@@ -3,3 +3,6 @@ onchainmonkey.com
 rarity.tools
 opensea.io
 search.onchainmonkey.com
+www.youtube.com
+youtube.com
+youtu.be
