@@ -81,15 +81,26 @@ func handleMessage(s *discordgo.Session, m *discordgo.MessageCreate) {
 	murls := rxStrict.FindAllString(m.Content, -1)
 	if len(murls) != 0 {
 		//Just verify the first valid url posted
-		u, err := url.Parse(murls[0])
+		link := murls[0]
+		u, err := url.Parse(link)
 		if err != nil {
 			return
 		}
 		hostName := u.Hostname()
 		if verifiedDomains[hostName] {
 			s.ChannelMessageSendEmbed(m.ChannelID, &discordgo.MessageEmbed{
-				Title:       "⬆️ URL verified ✅",
-				Description: u.Hostname(),
+				Title: "✅ Link verified by URL Bot",
+				URL:   link,
+				Fields: []*discordgo.MessageEmbedField{
+					{
+						Name:  "Domain",
+						Value: u.Hostname(),
+					},
+					{
+						Name:  "URL",
+						Value: link,
+					},
+				},
 			})
 		}
 	}
