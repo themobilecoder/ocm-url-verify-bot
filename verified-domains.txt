@@ -6,3 +6,4 @@ search.onchainmonkey.com
 www.youtube.com
 youtube.com
 youtu.be
+github.com
